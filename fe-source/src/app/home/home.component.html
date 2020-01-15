@@ -1,0 +1,86 @@
+<nav aria-label="breadcrumb mb-2">
+  <ol class="breadcrumb bg-light">
+    <li class="breadcrumb-item my-1" title="GitHub Developer">
+      <a href="https://developer.github.com/" target="_blank">
+        <fa-icon [icon]="['fab', 'github']" size="lg"></fa-icon>
+      </a>
+    </li>
+    <li class="breadcrumb-item my-1">
+      <input type="text" class="form-control form-control-sm" [ngClass]="{'is-invalid': !owner}" [(ngModel)]="owner"
+        placeholder="Owner">
+    </li>
+    <li class="breadcrumb-item my-1">
+      <input type="text" class="form-control form-control-sm" [ngClass]="{'is-invalid': !name}" [(ngModel)]="name"
+        placeholder="Name">
+    </li>
+    <li class="breadcrumb-item my-1">
+      <input type="text" class="form-control form-control-sm" [ngClass]="{'is-invalid': !branch}" [(ngModel)]="branch"
+        placeholder="Branch">
+    </li>
+    <li class="ml-auto my-1">
+      <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+          <div class="input-group-text">API</div>
+        </div>
+        <select class="custom-select custom-select-sm mr-sm-2" [(ngModel)]="api">
+          <option value="github">GitHub</option>
+          <option value="backend">Back-End</option>
+        </select>
+      </div>
+    </li>
+  </ol>
+</nav>
+
+<div class="container py-3">
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row align-items-center">
+      <div class="col-sm-3 my-1">
+        <label class="sr-only" for="accessToken">Personal access token</label>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <a title="Click to follow link"
+                href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line"
+                target="_blank">
+                <fa-icon icon="info" [fixedWidth]="true"></fa-icon>
+              </a>
+            </div>
+          </div>
+          <input type="text" class="form-control form-control-sm" id="accessToken" placeholder="Personal access token"
+            formControlName="token" [ngClass]="{'is-invalid': !valid('token')}">
+        </div>
+      </div>
+      <div class="col-auto my-1">
+        <select class="custom-select custom-select-sm mr-sm-2" formControlName="perPage"
+          [ngClass]="{'is-invalid': !valid('perPage')}">
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div class="col-auto ml-auto my-1">
+        <button type="submit" class="btn-refresh">
+          <fa-icon [icon]="['far', 'star']"></fa-icon>
+          <span class="font-weight-bold mx-2">Refresh</span>
+          <fa-icon [icon]="['far', 'star']"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+  <ul class="list-group py-3" *ngIf="!loading else loadingTemplate">
+    <ng-container *ngIf="(fetched && (!nodeList || !nodeList.length)) else listTemplate">
+      No records found.
+    </ng-container>
+  </ul>
+</div>
+
+<ng-template #loadingTemplate>
+  <fa-icon icon="spinner" spin="true"></fa-icon>
+</ng-template>
+
+<ng-template #listTemplate>
+  <ng-container *ngFor="let item of nodeList">
+    <app-item [node]="item"></app-item>
+  </ng-container>
+</ng-template>

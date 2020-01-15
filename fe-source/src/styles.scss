@@ -1,0 +1,16 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import '~ngx-toastr/toastr-bs4-alert';
+
+body {
+  color: #586069;
+
+  a {
+    color: #444d56;
+    text-decoration: none;
+
+    &:hover {
+      color: #444d56;
+      text-decoration: underline;
+    }
+  }
+}
