@@ -4,7 +4,7 @@ The app retrieves the most recent commits from given repository using GitHub Gra
 
 <strong><a href="https://javkhaanj7.github.io/github-fetcher/">View Demo</a> | <a href="https://github.com/javkhaanj7/github-fetcher/archive/master.zip">Download ZIP</a></strong>
 
-![Tabler preview](https://raw.githubusercontent.com/tabler/tabler/dev/static/tabler-preview.png)
+![GitHub Fetcher preview](https://github.com/javkhaanj7/github-fetcher/raw/master/github-fetcher-demo.png)
 
 ## Buy me a coffee
 
