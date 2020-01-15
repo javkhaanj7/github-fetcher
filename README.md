@@ -1,2 +1,31 @@
-# github-fetcher
-The commit fetcher app retrieves the most recent commits from requested repository using GitHub GraphQL API v4. The app developed with Angular 8 and Spring Boot 2.
+# GitHub Fetcher
+
+The app retrieves the most recent commits from given repository using GitHub GraphQL API v4. :smile:
+
+<strong><a href="https://javkhaanj7.github.io/github-fetcher/">View Demo</a> | <a href="https://github.com/javkhaanj7/github-fetcher/archive/master.zip">Download ZIP</a></strong>
+
+![Tabler preview](https://raw.githubusercontent.com/tabler/tabler/dev/static/tabler-preview.png)
+
+## Buy me a coffee
+
+<a href="https://www.buymeacoffee.com/3CjY6zl" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+## Full stack web development technologies and frameworks
+
+-   HTML5, SCSS and Bootstrap v4
+-   Angular 8
+-   GraphQL - Apollo Client
+-   Spring Boot 2
+
+## Requirements
+
+-   Node.js **12+**
+-   Java **11+**
+
+## Bugs or improvements
+
+Please feel free to report any bugs or improvements with pull requests.
+
+## License
+
+This project is open-sourced software licensed under the [MIT License](LICENSE.md)

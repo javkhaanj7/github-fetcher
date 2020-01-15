@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -25,7 +26,7 @@ import { ApiService } from './services/api.service';
     AppRoutingModule,
     GraphQLModule
   ],
-  providers: [ApiService],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/github-fetcher' }, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
